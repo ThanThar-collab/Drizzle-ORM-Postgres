@@ -1,5 +1,20 @@
-async function main() {
-    console.log('here 2')
-}
+import express, {Request, Response } from 'express';
+import dotenv from 'dotenv';
+import http from 'http';
 
-main()
+dotenv.config();
+
+const app = express();
+
+const port = process.env.PORT || 3000;
+
+app.get('/', (_req: Request, res: Response) => {
+  res.send('Hello from Express Server!')
+  
+});
+
+const server = http.createServer(app);
+server.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+}
+);

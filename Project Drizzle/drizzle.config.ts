@@ -1,12 +1,15 @@
 import { defineConfig } from "drizzle-kit"
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default defineConfig({
-    schema: "./src/drizzle/model/schema.ts", //path to your Drizzle schema
-    out: "./src/drizzle/migrations", //folder where migrations will be generated
-    driver: "pg", //driver
+    schema: "./src/db/model/", //path to your Drizzle schema
+    out: "./src/db/migrations", //folder where migrations will be generated
+    dialect: "postgresql", //driver
     dbCredentials: {
-        connectionString: process.env.DATABASE_URL as string,
+       url: process.env.DATABASE_URL!,
     },
     verbose: true,
-    strict: true
+    strict: true,
 });

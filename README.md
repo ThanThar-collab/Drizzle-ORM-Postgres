@@ -66,11 +66,11 @@ Make sure you have the following installed before starting:
 ### 3. Install Dependencies
 
 ```bash
-    npm i drizzle-orm@0.29.5
+    npm i drizzle-orm@0.45.1
 ```
 
 ```bash
-    npm i drizzle-kit@0.20.14
+    npm i drizzle-kit@0.31.9
 ```
 
 install postgrel drivers
